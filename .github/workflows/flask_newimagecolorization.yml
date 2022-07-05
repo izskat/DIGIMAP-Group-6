@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'NewImageColorization'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_647347C601E44C8F8253CA06A012C48C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7233C2B0F9F24599BF087A2977DC0979 }}
