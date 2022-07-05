@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Application</title>
+    <title>Colorful Image Colorization</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}"/>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -40,10 +40,10 @@
             <div class="sec2-content">
                 <form method="post" action="/" enctype="multipart/form-data">
                     <!-- TODO: Show image upon upload, not just when submit is clicked  -->
-                    <label for="file" class="d-flex mt-5">
-                        <div class="d-flex rounded text-center color-violet flex-column h-100 my-auto label-content">
-                            <h1 class="font-bold mt-5">Click here to upload your image</h1>
-                            <h5 class="font-medium color-gray mt-4">Accepted format: .JPG, .JPEG, .PNG</h5>
+                    <label for="file" class="d-flex mt-5" style="height: auto;">
+                        <div class="d-flex rounded text-center color-violet flex-column h-100 my-auto label-content pt-2 pb-2">
+                            <h2 class="font-bold">Click here to upload your image</h2>
+                            <h6 class="font-medium color-gray mt-1">Accepted format: .JPG, .JPEG, .PNG</h6>
                         </div>
                     </label>
                     <!-- <input accept="image/*" type="file" name="file" id="file" required hidden>
@@ -65,8 +65,8 @@
                     </p>
 
 
-                    <div class="d-flex mt-3">
-                        <button  class="p-2 px-4 secondary-button rounded-pill font-bold mt-2 me-auto color-pink">CLEAR</button>
+                    <div class="d-flex mt-3 mb-5 pb-5">
+                        <!-- <button  class="p-2 px-4 secondary-button rounded-pill font-bold mt-2 me-auto color-pink">CLEAR</button> -->
                         <input type="submit" class="p-2 px-4 primary-button rounded-pill font-bold color-white mt-2 ms-auto"></input>    
                     </div>
                 </form>
@@ -79,7 +79,6 @@
                     <img src="{{ url_for('display_image', filename=filename) }}">
                 </div>
             {% endif %}
-
             {% if base64 %}
                 <div>
                     <img src="data:image/png;base64, {{ base64 }}">
@@ -101,13 +100,13 @@
         <h1 class="font-extra-bold color-yellow sec3-title mt-3">COLORFUL IMAGE COLORIZATION</h1>
         <h5 class="font-medium color-white mt-3">A study by Richard Zhang, Phillip Isola, Alexei A. Efros (2018)</h5>
         
-        <div class="d-flex sm:flex-column flex-row">
+        <div class="d-flex flex-row">
             <div class="me-3 mt-5">
                 <h4>Given a grayscale photograph as input, Zhang et al. (2018) addressed the issue of hallucinating a plausible color version of the photograph. They proposed a fully automatic approach that produces vibrant and realistic colorizations by posing it as a classification task. Their method shows that colorization can be a powerful pretext task for self-supervised feature learning, acting as a cross-channel encoder. This approach results in state-of-the-art performance on several feature learning benchmarks.</h4>
             </div>
                 
-            <div class="ms-3 mt-1">
-                <img src="/static/img/img.png" alt="img" class="img-zhang w-80">
+            <div class="ms-3 mt-1 center m-auto">
+                <img src="/static/img/img.png" alt="img" class="img-zhang d-md-none d-lg-block">
             </div>
         </div>
         
@@ -161,4 +160,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
-
